@@ -1,0 +1,36 @@
+
+<template name="register">
+  <h2>Register</h2>
+  <form class="login">
+    <div class="form-group label-floating">
+       <input type="text" name="username" class="form-control" id="inputUsername" placeholder="Username">
+    </div>
+    <div class="form-group label-floating">
+       <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email">
+    </div>
+    <div class="form-group label-floating">
+      <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
+    </div>
+    <div class="form-group">
+        <button type="submit" value="Register" class="btn btn-primary">Register</button>
+    </div>
+</form>
+</template>
+
+<template name="login">
+  <h2>Login</h2>
+ <form class="login">
+   <div class="form-group label-floating">
+      <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email">
+   </div>
+   <div class="form-group label-floating">
+     <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
+   </div>
+   <div class="form-group">
+       <button type="submit" value="Login" class="btn btn-primary">Login</button>
+        <a href="{{pathFor route='register'}}">Register</a>
+   </div>
+
+
+ </form>
+</template>

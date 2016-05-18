@@ -1,0 +1,25 @@
+
+<template name="chatroom">
+    <h2>Private Chat  </h2>
+        <div class="content">
+  {{> messages}}
+  {{> addMessage}}
+  </div>
+</template>
+
+<template name="messages">
+  <ul>
+  {{#each msgs}}
+  <li>
+  {{name}}: {{text}}
+</li>
+  {{/each}}
+</ul>
+</template>
+
+
+<template name="addMessage">
+  <form>Write a message:
+      <input type="text" id="message"  name="message">
+  </form>
+</template>

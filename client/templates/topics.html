@@ -1,0 +1,37 @@
+<template name="topics">
+
+    {{> addTopic}}
+      <h2>Topics</h2>
+    <ul>
+        {{#each topic}}
+      	    {{> topicItem}}
+        {{/each}}
+    </ul>
+</template>
+
+<template name="topicItem">
+  {{#if dist lat lng }}
+  <li>
+  <div class="list-group">
+      <a href="/topic/{{_id}}" class="list-group-item">{{name}}</a>
+        {{#if isowner createdBy}}
+      <!--lat:{{lat}}<br>
+        lon:{{lng}}<br>-->
+        [<a href="#" class="delete-topic">Delete</a>]
+        {{else}}
+          {{#each owner createdBy}}
+          <a href="{{pathFor route='chatroom'}}" class="user">  {{username}} </a>
+          {{/each}}
+        {{/if}}
+  </div>
+  </li>
+  {{else}}
+  {{/if}}
+</template>
+
+
+<template name="addTopic">
+    <form>Create a topic:
+        <input type="text" placeholder="Topic name here..." name="topicName">
+    </form>
+</template>

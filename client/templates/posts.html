@@ -1,0 +1,39 @@
+
+<template name="topicPage">
+    <h2>{{name}}</h2>
+        <div class="content">
+    {{> posts}}
+  </div>
+</template>
+
+
+<template name="addPost">
+    <form>
+        Write a comment:
+        <input type="text" placeholder="Type something here..." name="postName">
+    </form>
+</template>
+
+<template name="posts">
+
+  {{> addPost}}
+    <ul>
+    {{#each post}}
+        <li>{{> postItem}}</li>
+    {{/each}}
+    </ul>
+
+</template>
+
+<template name="postItem">
+    <li>
+      {{name}}
+      {{#if isowner createdBy}}
+       [<a href="#" class="delete-post">Delete</a>]
+    {{else}}
+     {{#each owner createdBy}}
+    <a href="{{pathFor route='chatroom'}}" class="user">  {{username}} </a>
+    {{/each}}
+    {{/if}}
+    </li>
+</template>

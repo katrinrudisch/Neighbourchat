@@ -1,0 +1,14 @@
+/* CSS declarations go here */
+h2{
+  text-align: center;
+}
+
+.login{
+  margin: auto;
+  width:250px;
+}
+
+.content{
+  margin: auto;
+  width: 400px;
+}
