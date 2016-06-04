@@ -23,8 +23,8 @@ Tracker.autorun(function(){
         lat1 = curr.lat;
         lon1 = curr.lng;
 
-        var radlat1 = Math.PI * lat1/180
-        var radlat2 = Math.PI * lat2/180
+        var radlat1 = Math.PI * lat1/180 
+        var radlat2 = Math.PI * lat2/180 
         var theta = lon1-lon2
         var radtheta = Math.PI * theta/180
         var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
@@ -154,19 +154,15 @@ Template.addTopic.events({
       var currentUser = Meteor.userId();
       var currentLocation = Geolocation.latLng() || '';
 
-      if(currentLocation) {
-        Session.set('lat', currentLocation.lat);
-        Session.set('lng', currentLocation.lng);
-      }
-
-      if(topicName != ""){
+      if(topicName != "" && currentLocation.lng != "" && currentLocation.lat != ""){
       Topics.insert({
           name: topicName,
           createdBy: currentUser,
-          lat: Session.get('lat'),
-          lng: Session.get('lng')
+          lat: currentLocation.lat,
+          lng: currentLocation.lng
       });
       $('[name="topicName"]').val('');
+      alert("topic hinzugefügt");
     }
   }
 });

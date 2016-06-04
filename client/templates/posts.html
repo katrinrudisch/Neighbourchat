@@ -1,6 +1,8 @@
 
 <template name="topicPage">
-    <h2>{{name}}</h2>
+<div class="lala nopadding">
+    <h3>{{name}}</h3>
+    </div>
         <div class="content">
     {{> posts}}
   </div>
@@ -8,32 +10,39 @@
 
 
 <template name="addPost">
+<div class="lala bottom">
     <form>
         Write a comment:
         <input type="text" placeholder="Type something here..." name="postName">
     </form>
+    </div>
 </template>
 
 <template name="posts">
 
   {{> addPost}}
-    <ul>
+  <div class="wrapper">
+    <h2>Posts</h2>
+    <ul class="post">
     {{#each post}}
-        <li>{{> postItem}}</li>
+        {{> postItem}}
     {{/each}}
     </ul>
+    </div>
 
 </template>
 
 <template name="postItem">
     <li>
+      <div class="list-group">
       {{name}}
       {{#if isowner createdBy}}
-       [<a href="#" class="delete-post">Delete</a>]
+       <br>[<a href="#" class="delete-post">Delete</a>]
     {{else}}
      {{#each owner createdBy}}
-    <a href="{{pathFor route='chatroom'}}" class="user">  {{username}} </a>
+     - <a href="{{pathFor route='chatroom'}}" class="user">  {{username}} </a>
     {{/each}}
     {{/if}}
+    </div>
     </li>
 </template>

@@ -2,16 +2,18 @@
 <template name="chatroom">
     <h2>Private Chat  </h2>
         <div class="content">
+        <div class="wrapper">
   {{> messages}}
   {{> addMessage}}
+  </div>
   </div>
 </template>
 
 <template name="messages">
-  <ul>
+  <ul class="chatlist">
   {{#each msgs}}
   <li>
-  {{name}}: {{text}}
+  <span class="name">{{name}}</span>: {{text}}
 </li>
   {{/each}}
 </ul>
@@ -19,7 +21,10 @@
 
 
 <template name="addMessage">
+<div class="formpadding">
   <form>Write a message:
-      <input type="text" id="message"  name="message">
+      <textarea id="message" name="message"></textarea><!--<input type="text" id="message"  name="message">-->
+      <input type="submit" />
   </form>
+  </div>
 </template>

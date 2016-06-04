@@ -1,12 +1,17 @@
 <template name="topics">
-
+<div class="wrapper">
+<div class="lala bottom">
     {{> addTopic}}
+    </div>
+    <div class="wrapper">
       <h2>Topics</h2>
-    <ul>
+    <ul class="topics">
         {{#each topic}}
-      	    {{> topicItem}}
+            {{> topicItem}}
         {{/each}}
     </ul>
+    </div>
+</div>
 </template>
 
 <template name="topicItem">
@@ -15,12 +20,13 @@
   <div class="list-group">
       <a href="/topic/{{_id}}" class="list-group-item">{{name}}</a>
         {{#if isowner createdBy}}
-      <!--lat:{{lat}}<br>
+        <!--lat:{{lat}}<br>
         lon:{{lng}}<br>-->
+        This is your topic:&nbsp;
         [<a href="#" class="delete-topic">Delete</a>]
         {{else}}
           {{#each owner createdBy}}
-          <a href="{{pathFor route='chatroom'}}" class="user">  {{username}} </a>
+          owner: <a href="{{pathFor route='chatroom'}}" class="user">  {{username}} </a>
           {{/each}}
         {{/if}}
   </div>
@@ -31,7 +37,10 @@
 
 
 <template name="addTopic">
-    <form>Create a topic:
+    <form>
+      <div class="formdiv">
+        Create a topic:<br>
         <input type="text" placeholder="Topic name here..." name="topicName">
+      </div>
     </form>
 </template>

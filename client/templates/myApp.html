@@ -17,6 +17,7 @@
 
 
   {{#if currentUser}}
+  <div class="wrapper">
 <h3>  Hello {{currentUser.username}}! </h3>
 
 <p>
@@ -33,12 +34,16 @@
 </li>
   {{/each}}
 </p>
+</div>
 
   {{> topics}}
 
   {{else}}
-  <p>Welcome to NeighbourChat!</p>
-
+  <div class="homescreen">
+  <h2 class="welcome">Welcome to NeighbourChat!</h2>
+  <img src="logo.png" alt="Logo" />
+  <p class="welcome">Willkommen bei NeighbourChat, der anonymen Chat-App mit der du mit deinem Umkreis chatten kannst. Nach einer einmaligen Anmeldung kannst du auch schon loslegen. Viel Spaß dabei!</p>
+  </div>
   {{/if}}
 </div>
 </template>

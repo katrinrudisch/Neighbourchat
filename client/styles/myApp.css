@@ -1,14 +1,77 @@
 /* CSS declarations go here */
-h2{
+h2,h3{
   text-align: center;
 }
+
 
 .login{
   margin: auto;
   width:250px;
 }
 
-.content{
+.content { width: 100%; }
+
+.wrapper{
   margin: auto;
-  width: 400px;
+  width: 100%;
+}
+
+li { list-style: none; }
+
+.topics li:nth-child(odd) div{background-color: #ccc}
+.topics li:nth-child(even) div{background-color: #ddd}
+.list-group { margin-bottom:0;padding:20px; }
+
+ul,ol { margin:0;padding:0; }
+a:hover,a:active,a:focus {  text-decoration: underline !important; }
+.list-group .list-group-item { padding:0;font-weight: bold; }
+.list-group .list-group-item:hover,
+.list-group .list-group-item:focus,
+.list-group .list-group-item:active { background-color: transparent !important; }
+
+.navbar { margin-bottom: 0; }
+.navbar .navbar-brand { line-height: 45px; }
+.nav::before, .nav::after, .navbar::before, .navbar::after, .navbar-header::before, 
+.navbar-header::after, .navbar-collapse::before, .navbar-collapse::after{
+	display: inline;
+}
+
+ul.navbar-right { text-align: right; }
+
+.logout { text-align: right; }
+
+.post li:nth-child(odd) {background-color: #ccc}
+.post li:nth-child(even) {background-color: #ddd}
+
+input { width: 100%;padding: 5px }
+
+.formdiv { width: 100%; }
+
+.lala { background-color:rgba(0, 150, 136, 0.4);padding: 5px 2% 10px 2%;margin: 0;border: none; }
+
+.lala p { margin: 0; }
+
+.bottom { border-bottom: 1px solid #ccc; }
+
+.nopadding { padding: 1%; }
+
+.formpadding { padding: 2%;background-color:rgba(0, 150, 136, 0.4);  }
+
+textarea{ width: 100%;height: 100px;resize: none; }
+
+.chatlist li { padding: 0 2% 1% 2%; }
+
+.welcome {  text-align: center;margin-top: 20px;}
+
+img { width: 70%; }
+.homescreen { text-align: center;margin: 0 auto;width: 98%;padding: 0 3%; }
+.homescreen p { margin-top: 20px; }
+
+@media screen and (min-width: 768px) {
+.wrapper { width: 600px; }	
+.navbar .navbar-brand { line-height: inherit; }
+.chatlist li { padding: 0 0 1% 0; }
+img { width: 300px; }
+.welcome { width: 768px;text-align: center;margin-top: 100px;  }
+.homescreen { width: 768px; }
 }
