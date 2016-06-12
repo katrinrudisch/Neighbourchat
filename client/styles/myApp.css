@@ -31,10 +31,14 @@ a:hover,a:active,a:focus {  text-decoration: underline !important; }
 
 .navbar { margin-bottom: 0; }
 .navbar .navbar-brand { line-height: 45px; }
+
 .nav::before, .nav::after, .navbar::before, .navbar::after, .navbar-header::before,
 .navbar-header::after, .navbar-collapse::before, .navbar-collapse::after{
 	display: inline;
 }
+
+.navbar-header{ width:50%;float:left; }
+.navbar-collapse { width:50%;float:right; }
 
 ul.navbar-right { text-align: right; }
 
