@@ -31,7 +31,7 @@ a:hover,a:active,a:focus {  text-decoration: underline !important; }
 
 .navbar { margin-bottom: 0; }
 .navbar .navbar-brand { line-height: 45px; }
-.nav::before, .nav::after, .navbar::before, .navbar::after, .navbar-header::before, 
+.nav::before, .nav::after, .navbar::before, .navbar::after, .navbar-header::before,
 .navbar-header::after, .navbar-collapse::before, .navbar-collapse::after{
 	display: inline;
 }
@@ -68,8 +68,8 @@ img { width: 70%; }
 .homescreen p { margin-top: 20px; }
 
 @media screen and (min-width: 768px) {
-.wrapper { width: 600px; }	
-.navbar .navbar-brand { line-height: inherit; }
+.wrapper { width: 600px; }
+.navbar .navbar-brand{ line-height: inherit; }
 .chatlist li { padding: 0 0 1% 0; }
 img { width: 300px; }
 .welcome { width: 768px;text-align: center;margin-top: 100px;  }
