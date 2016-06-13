@@ -1,17 +1,8 @@
 //Router
 Router.route('/register');
 Router.route('/chatroom');
-/*
-Router.route('/chatroom/:userId', {
-  name: 'chatPage',
-  template: 'chatPage',
-  data: function(){
-    var username = this.params.userId;
-    return Meteor.users.findOne({_id: username});
-  }
-});
-*/
 Router.route('/login');
+
 Router.route('/', {
     name: 'home',
     template: 'home'
